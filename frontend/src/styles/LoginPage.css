@@ -1,0 +1,157 @@
+.login-page{
+  min-height:100svh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:24px;
+  background:transparent;
+}
+
+.login-card{
+  width:min(420px,95vw);
+  background: var(--cardSolid);
+  border-radius:var(--radius-lg);
+  padding:20px 22px 26px;
+  box-shadow: var(--cardGlow);
+  border:1px solid var(--border);
+  text-align:center;
+  color: var(--text);
+  backdrop-filter: blur(6px);
+}
+
+.login-topbar{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin-bottom: 10px;
+}
+
+.login-chip{
+  border:none;
+  border-radius:999px;
+  padding:6px 12px;
+  font-size:13px;
+  cursor:pointer;
+  background: var(--chip);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family:"Quicksand",sans-serif;
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:44px;
+  box-shadow:0 2px 0 rgba(0,0,0,.04);
+  transition:background 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease;
+}
+
+.login-chip:hover{
+  background: var(--chipHover);
+  transform:translateY(-0.5px);
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+}
+
+.login-title{
+  margin:0 0 10px;
+  font-size:26px;
+  font-weight:700;
+  letter-spacing:0.01em;
+  font-family:"Quicksand",sans-serif;
+  color: var(--text);
+}
+
+.login-subtitle{
+  margin:0 0 18px;
+  font-size:14px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.login-btn{
+  width:100%;
+  height:44px;
+  border:none;
+  border-radius:999px;
+  font-weight:800;
+  font-size:15px;
+  cursor:pointer;
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 6px 16px rgba(0,0,0,.2);
+  font-family:"Quicksand",sans-serif;
+  transition: filter .15s ease, transform .12s ease, box-shadow .15s ease;
+}
+
+.login-btn:hover{
+  filter: brightness(0.96);
+  transform: translateY(-1px);
+  box-shadow:0 10px 22px rgba(0,0,0,.26);
+}
+
+/* ===== TOPBAR CHIPS (lang + theme) – unified, no duplicates ===== */
+.logout-chip{
+  border: 1px solid var(--border);
+  background: var(--chip);
+  color: var(--text);
+
+  height: 34px;
+  min-width: 34px;          /* CS a 🌙 budou vizuálně stejné */
+  padding: 0 12px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 0 rgba(0,0,0,.04);
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease;
+}
+
+.logout-chip:hover{
+  background: var(--chipHover);
+  transform: translateY(-0.5px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+.logout-chip:active{
+  transform: translateY(0px);
+  box-shadow: 0 2px 0 rgba(0,0,0,.04);
+}
+
+/* emoji/icon baseline fix */
+.logout-chip span{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 15px;
+}
+
+/* theme chip: keep SAME hover/shadow, only change base bg/text if you want */
+.logout-chip.theme-chip{
+  background: var(--themeBtnBg);
+  color: var(--themeBtnText);
+}
+
+/* IMPORTANT: hover stays identical (only bg changes a bit) */
+.logout-chip.theme-chip:hover{
+  background: var(--themeBtnBgHover);
+}
+
+.lists-left-badges{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.lists-tile-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}

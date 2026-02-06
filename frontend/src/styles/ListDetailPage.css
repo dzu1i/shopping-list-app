@@ -1,0 +1,566 @@
+.detail-page{
+  min-height:100svh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:40px 16px;
+  background:transparent;
+}
+
+/* CARD */
+.detail-card{
+  width:min(760px,96vw);
+  background: var(--surface);
+  border-radius:var(--radius-lg);
+  padding:18px 20px;
+  box-shadow: var(--shadow-soft);
+  position:relative;
+  border:1px solid var(--cardBorder);
+  color: var(--text);
+}
+
+/* TOPBAR (Back + toggles) */
+.detail-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom: 8px;
+}
+
+.detail-topbar-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* Back / chip buttons — IMPORTANT: NOT absolute */
+.back-chip{
+  position: static;
+  border:none;
+  border-radius:999px;
+  padding:6px 12px;
+  font-size:13px;
+  cursor:pointer;
+  background: var(--chip);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family:"Quicksand",sans-serif;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  box-shadow:0 2px 0 rgba(0,0,0,.04);
+  transition:background 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease;
+}
+
+.back-chip:hover{
+  background: var(--chipHover);
+  transform:translateY(-0.5px);
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+}
+
+/* HEADER */
+.detail-header {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 2px;
+  margin-bottom: 10px;
+}
+
+.detail-header-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin:0;
+  font-size:28px;
+  font-weight:700;
+  line-height:1.05;
+  letter-spacing:0.01em;
+  font-family: "Quicksand", sans-serif;
+  color: var(--text);
+}
+
+.title-input {
+  font-size:28px;
+  font-weight:700;
+  border-radius:16px;
+  border:1px solid var(--border);
+  padding:10px 14px;
+  background: transparent;
+  color: var(--text);
+  box-shadow:0 2px 0 rgba(0,0,0,.04);
+  outline:none;
+  transition:.15s;
+  font-family: "Quicksand", sans-serif;
+}
+
+.title-input:focus {
+  border-color: var(--accent);
+  box-shadow:0 0 0 2px rgba(110,168,110,.25);
+}
+
+.date{
+  font-size:12px;
+  color:var(--muted);
+  margin: 6px 0px 0px 2px;
+}
+
+/* PANEL */
+.detail-panel{
+  margin-top:12px;
+  background: var(--panel);
+  border-radius:18px;
+  padding:16px;
+  border: 1px solid var(--border);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+  position:relative;
+  padding-bottom:70px;
+}
+
+/* MEMBERS */
+.members-box{
+  background: var(--panel);
+  border-radius:12px;
+  padding:10px;
+  margin-bottom:10px;
+  border:1px solid var(--border);
+}
+
+.members-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:6px;
+  font-size:14px;
+  font-weight:600;
+  color: var(--text);
+}
+
+.role-badge{
+  font-size:12px;
+  padding:2px 8px;
+  border-radius:999px;
+  background: var(--chip);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.members-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.member-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 8px;
+  border-radius:999px;
+  background: var(--chip);
+  border: 1px solid var(--border);
+  font-size:13px;
+  color: var(--text);
+}
+
+.member-remove{
+  border:none;
+  background:transparent;
+  cursor:pointer;
+  font-weight:800;
+  color: var(--danger);
+}
+
+.members-add{
+  display:flex;
+  gap:8px;
+  margin-top:8px;
+}
+
+.members-add input{
+  flex:1;
+  padding:6px 8px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+}
+
+.members-add button{
+  padding:6px 10px;
+  border-radius:8px;
+  border:none;
+  background: var(--accent);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* FILTER ROW */
+.filter-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:8px;
+  margin-top:6px;
+  gap:16px;
+  font-size:14px;
+  margin-left: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap: wrap;
+}
+
+.filter-group{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap: wrap;
+}
+
+.filter-label{
+  font-size:13px;
+  color: var(--text);
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+.filter-buttons{
+  display:flex;
+  gap:6px;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button{
+  border:1px solid transparent;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:13px;
+  cursor:pointer;
+  background:transparent;
+  color:var(--muted);
+  transition:background 0.15s ease, color 0.15s ease, transform 0.12s ease;
+}
+
+.filter-buttons button:hover{
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+}
+
+.filter-buttons button.active{
+  background: var(--chip);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* TOGGLE ALL */
+.toggle-all-square{
+  width:32px;
+  height:32px;
+  border-radius:8px;
+  border:2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size:12px;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 2px 4px rgba(0,0,0,.12);
+  transition:background .15s ease, color .15s ease,
+           box-shadow .15s ease, transform .12s ease;
+}
+
+.toggle-all-square.checked{
+  background: var(--accent);
+  color:#fff;
+}
+
+.toggle-all-square:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 12px rgba(0,0,0,.22);
+}
+
+/* ADD ITEM */
+.add-item-row{
+  display:flex;
+  gap:8px;
+  margin-bottom:10px;
+  margin-top:4px;
+  padding:0 8px;
+  flex-wrap: wrap;
+}
+
+.add-item-row input{
+  padding:6px 8px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+}
+
+.add-item-row input:first-child{ flex:1; min-width: 180px; }
+
+.add-item-row button{
+  padding:6px 10px;
+  border-radius:8px;
+  border:none;
+  background: var(--accent);
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+}
+
+/* FOOTER ACTIONS (Edit/Archive/Delete) */
+.footer-actions{
+  position:absolute;
+  left:16px;
+  right:16px;
+  bottom:16px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:12px;
+}
+
+.footer-actions button{
+  height:44px;
+  border:none;
+  border-radius:12px;
+  font-weight:900;
+  color:#fff;
+  cursor:pointer;
+  transition:filter 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease;
+}
+
+.footer-actions button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 16px rgba(0,0,0,.22);
+  filter: brightness(0.95);
+}
+
+.footer-actions .edit{
+  background: var(--accent);
+  color: #fff;
+}
+
+.footer-actions .edit:hover{
+  filter: brightness(0.95);
+}
+
+.footer-actions .archive{
+  background: rgba(255,255,255,0.12);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.footer-actions .archive:hover{
+  background: rgba(255,255,255,0.18);
+}
+
+.footer-actions .delete{
+  background: var(--danger);
+  color: #fff;
+}
+
+.footer-actions .delete:hover{
+  filter: brightness(0.92);
+}
+
+/* RESPONSIVE */
+@media (max-width: 520px){
+  .footer-actions{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== TOPBAR CHIPS (lang + theme) – unified, no duplicates ===== */
+.logout-chip{
+  border: 1px solid var(--border);
+  background: var(--chip);
+  color: var(--text);
+
+  height: 34px;
+  min-width: 34px;          /* CS a 🌙 budou vizuálně stejné */
+  padding: 0 12px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 0 rgba(0,0,0,.04);
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease;
+}
+
+.logout-chip:hover{
+  background: var(--chipHover);
+  transform: translateY(-0.5px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+.logout-chip:active{
+  transform: translateY(0px);
+  box-shadow: 0 2px 0 rgba(0,0,0,.04);
+}
+
+/* emoji/icon baseline fix */
+.logout-chip span{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 15px;
+}
+
+/* theme chip: keep SAME hover/shadow, only change base bg/text if you want */
+.logout-chip.theme-chip{
+  background: var(--themeBtnBg);
+  color: var(--themeBtnText);
+}
+
+/* IMPORTANT: hover stays identical (only bg changes a bit) */
+.logout-chip.theme-chip:hover{
+  background: var(--themeBtnBgHover);
+}
+
+.chart-card{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px;
+  margin-bottom: 10px;
+  min-width: 0;
+}
+
+.chart-body {
+  height: 180px; /* klidně 160–220 podle toho co chceš */
+  min-width: 0;
+}
+
+.chart-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom: 6px;
+}
+
+.chart-title{
+  font-weight: 800;
+}
+
+.chart-sub{
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* QUICK ADD (looks like an item row) */
+.quick-add{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  margin-top: 10px;
+  margin-bottom: 12px;
+
+  background: var(--tile);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 8px 10px;
+
+  box-shadow: 0 1px 0 rgba(255,255,255,0.25);
+}
+
+/* fake checkbox look (like items) */
+.quick-add-check{
+  width: 24px;
+  height: 24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex: 0 0 24px;
+}
+
+.quick-add-check span{
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  border: 2px solid rgba(0,0,0,0.18);
+  background: rgba(255,255,255,0.55);
+}
+
+/* inputs */
+.quick-add-name,
+.quick-add-qty{
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  padding: 7px 12px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.quick-add-name{
+  flex: 1;
+  min-width: 160px;
+}
+
+.quick-add-qty{
+  width: 110px;
+  text-align: center;
+}
+
+/* focus */
+.quick-add-name:focus,
+.quick-add-qty:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.22);
+  background: rgba(255,255,255,0.10);
+}
+
+/* add button */
+.quick-add-btn{
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+
+  box-shadow: 0 2px 0 rgba(0,0,0,.04);
+  transition: filter 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease;
+}
+
+.quick-add-btn:hover{
+  transform: translateY(-0.5px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+  filter: brightness(0.95);
+}
+
+.quick-add-btn:active{
+  transform: translateY(0px);
+  box-shadow: 0 2px 0 rgba(0,0,0,.04);
+}

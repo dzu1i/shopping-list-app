@@ -1,0 +1,454 @@
+.lists-page {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+  background: transparent;
+}
+
+.lists-shell {
+  width: min(760px, 96vw);
+}
+
+.lists-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px 26px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--cardBorder);
+  color: var(--text);
+}
+
+.lists-title {
+  margin: 0 0 14px;
+  text-align: left;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  font-family: "Quicksand", sans-serif;
+  color: var(--text);
+}
+
+.lists-header-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.lists-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.lists-filter-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.lists-filter-buttons {
+  display: inline-flex;
+  padding: 3px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.lists-filter-buttons button{
+  border:none;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:13px;
+  cursor:pointer;
+  background:transparent;
+  color:var(--muted);
+  font-family:"Quicksand",sans-serif;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.12s ease;
+}
+
+.lists-filter-buttons button:hover{
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+}
+
+.lists-filter-buttons button.active{
+  background: var(--accent);
+  color:#fff;
+}
+
+.lists-filter-buttons button.active:hover{
+  filter: brightness(0.95);
+}
+
+.lists-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.lists-tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lists-tile-button {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 10px 48px 10px 14px;
+  background: var(--tile);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.12s ease, box-shadow 0.12s ease,
+    background 0.12s ease;
+  color: var(--text);
+}
+
+.lists-tile-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+  background: var(--tileHover);
+}
+
+.lists-tile-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.lists-tile-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.lists-badge-archived {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--danger-soft);
+  color: var(--danger);
+  font-size: 10px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.lists-badge-count{
+  display:inline-flex;
+  align-items:center;
+  padding:2px 8px;
+  border-radius:999px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.lists-progress-text {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(77, 106, 77, 0.18);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.lists-tile-delete {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  background: var(--danger);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    filter 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.12s ease;
+}
+
+.lists-tile-delete:hover {
+  filter: brightness(0.92);
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+.lists-empty {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 4px 2px;
+}
+
+.lists-shared-label {
+  margin: 4px 2px 8px;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.lists-create-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-width:220px;
+  border:none;
+  border-radius:999px;
+  padding:10px 18px;
+  background:var(--accent);
+  color:#fff;
+  font-weight:700;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 6px 16px rgba(0,0,0,0.25);
+  font-family:"Quicksand",sans-serif;
+  margin:16px auto 0;
+  transition:filter 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease;
+}
+
+.lists-create-btn:hover{
+  filter: brightness(0.95);
+  box-shadow:0 10px 22px rgba(0,0,0,0.30);
+  transform:translateY(-1px);
+}
+
+.lists-create-btn::before {
+  content: "+";
+  font-size: 18px;
+}
+
+.lists-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 40;
+}
+
+.lists-modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 20px 18px;
+  width: min(520px, 90vw);
+  max-height: 80vh;
+  box-shadow: var(--shadow-soft);
+  overflow: auto;
+  color: var(--text);
+}
+
+.lists-modal h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif;
+}
+
+.lists-modal-form label{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  font-size:13px;
+  margin-bottom:12px;
+  color: var(--text);
+}
+
+.lists-modal-form input{
+  border-radius:10px;
+  border:1px solid var(--border);
+  padding:6px 8px;
+  background: transparent;
+  color: var(--text);
+}
+
+.lists-modal-group{
+  margin-bottom:12px;
+}
+
+.lists-modal-group-header{
+  font-size:13px;
+  margin-bottom:4px;
+  color:var(--muted);
+}
+
+.lists-modal-inline{
+  display:flex;
+  gap:6px;
+}
+
+.lists-modal-inline input{
+  flex:1;
+}
+
+.lists-modal-qty{
+  max-width:120px;
+}
+
+.lists-modal-addbtn{
+  border:none;
+  border-radius:999px;
+  width:32px;
+  height:32px;
+  font-size:18px;
+  line-height:1;
+  padding:0;
+  cursor:pointer;
+  background: var(--accent);
+  color:#fff;
+}
+
+.lists-modal-tags{
+  list-style:none;
+  padding:6px 0 0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  font-size:12px;
+}
+
+.lists-modal-tags li{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 10px;
+  border-radius:999px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.lists-tag-name{
+  flex:1;
+  font-weight:500;
+}
+
+.lists-tag-qty{
+  min-width:60px;
+  text-align:right;
+  font-size:11px;
+  color:var(--muted);
+}
+
+.lists-modal-tags li button{
+  border:none;
+  background:transparent;
+  cursor:pointer;
+  font-size:12px;
+  color: var(--text);
+}
+
+.lists-modal-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:8px;
+  margin-top:8px;
+}
+
+.lists-modal-cancel,
+.lists-modal-confirm{
+  border:none;
+  border-radius:999px;
+  padding:6px 12px;
+  font-size:13px;
+  cursor:pointer;
+  font-family:"Quicksand",sans-serif;
+}
+
+.lists-modal-cancel{
+  background: var(--chip);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.lists-modal-confirm{
+  background: var(--accent);
+  color:#fff;
+}
+
+/* ===== TOPBAR CHIPS (lang + theme) – unified, no duplicates ===== */
+.logout-chip{
+  border: 1px solid var(--border);
+  background: var(--chip);
+  color: var(--text);
+
+  height: 34px;
+  min-width: 34px;          /* CS a 🌙 budou vizuálně stejné */
+  padding: 0 12px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 0 rgba(0,0,0,.04);
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease;
+}
+
+.logout-chip:hover{
+  background: var(--chipHover);
+  transform: translateY(-0.5px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+.logout-chip:active{
+  transform: translateY(0px);
+  box-shadow: 0 2px 0 rgba(0,0,0,.04);
+}
+
+/* emoji/icon baseline fix */
+.logout-chip span{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 15px;
+}
+
+/* theme chip: keep SAME hover/shadow, only change base bg/text if you want */
+.logout-chip.theme-chip{
+  background: var(--themeBtnBg);
+  color: var(--themeBtnText);
+}
+
+/* IMPORTANT: hover stays identical (only bg changes a bit) */
+.logout-chip.theme-chip:hover{
+  background: var(--themeBtnBgHover);
+}
